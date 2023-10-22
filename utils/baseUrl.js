@@ -1,5 +1,5 @@
 const baseUrl = process.env.NODE_ENV === "production" 
-? 'http://147.182.161.235:8080'
-: 'http://147.182.161.235:8080';
+? 'https://138.197.227.33'
+: 'https://138.197.227.33';
 
 export default baseUrl;
