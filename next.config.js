@@ -6,10 +6,10 @@ module.exports = {
     },
     trailingSlash: true,
     distDir: 'build',
+    output: 'static',
     /*
     experimental: {
         appDir: true,
     },
-    output: 'export',
     */
 }

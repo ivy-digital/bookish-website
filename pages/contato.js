@@ -17,12 +17,6 @@ const Contact = () => {
         activePageText="Contato"
       />
 
-      {
-        /**
-          <ContactForm />  
-        */
-      }
-
       <ContactInfo />
 
       <Rodape />

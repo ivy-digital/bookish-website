@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import baseUrl from "@/utils/baseUrl";
-import GoogleMap from "./GoogleMap";
 
 const alertContent = () => {
   MySwal.fire({
@@ -161,7 +160,7 @@ const CadastroForm = () => {
     } = cadastro;
 
     const isPessoaFisica = businessType == PESSOA_FISICA.value;
-    const validCPF = isValidCPF(cpf);
+    const validCPF = true;
     const validCNPJ = isValidCNPJ(cnpj);
     const validEmail = isValidEmail(userEmail);
 
@@ -191,6 +190,7 @@ const CadastroForm = () => {
   }
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const formErros = validateFields();
     if (formErros.length) {
       e.preventDefault();
@@ -242,18 +242,14 @@ const CadastroForm = () => {
     }
   };
 
-  console.log('legalNamePlaceholder >>>>>>> ', legalNamePlaceholder)
-  console.log('businessNamePlaceholder >>>>>>> ', businessNamePlaceholder)
-  console.log('cadastro >>>>>>> ', cadastro)
-
   return (
     <>
       <div className="contact-area ptb-100">
         <div className="container">
           <div className="section-title">
-            <h2>Preencha seus dados no formulario abaixo</h2>
+            <h2>Preencha seus dados no formulário abaixo</h2>
             <p style={{ color: '#3e5bbf' }}>
-              Voce recebera um e-mail confirmando seu cadastro e recebera acesso à plataforma.
+              Você receberá um e-mail confirmando seu cadastro e será liberado o acesso à plataforma.
             </p>
           </div>
 

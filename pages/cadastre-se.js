@@ -13,7 +13,7 @@ const CadastreSe = () => {
         pageTitle="Cadastre-se"
         homePageUrl="/"
         homePageText="Início"
-        activePageText="cadastre-se"
+        activePageText="Cadastre-se"
       />
 
       <CadastroForm />

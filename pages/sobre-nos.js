@@ -1,12 +1,7 @@
 import React from "react";
 import NavbarStyleTwo from "@/components/_App/NavbarStyleTwo";
 import PageBannerStyle2 from "@/components/Common/PageBannerStyle2";
-import AppProgressStyle4 from "@/components/Common/AppProgressStyle4";
-import AppDownloadStyle1 from "@/components/Common/AppDownloadStyle1";
-import FunfactStyleTwo from "@/components/Common/FunfactStyleTwo";
-import ClientFeedbackStyle5 from "@/components/Feedbacks/ClientFeedbackStyle5";
-import TeamMemberStyle2 from "@/components/Common/TeamMemberStyle2";
-import PartnerStyle3 from "@/components/Common/PartnerStyle3";
+import BaixeAgora from "@/components/Common/BaixeAgora";
 import Rodape from "@/components/_App/Rodape";
 import Link from "next/link";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -36,7 +31,7 @@ const AboutModern = () => {
                 <p>
                   Nos últimos anos, a tecnologia tem desempenhado um papel
                   significativo na melhoria de vida nas cidades. Nós da Info
-                  Matão, desevolvemos um aplicativo revolucionário que tem como
+                  Matão, desenvolvemos um aplicativo revolucionário que tem como
                   objetivo facilitar o acesso a informações cruciais para toda a
                   população. Esse aplicativo está mudando a forma como os
                   cidadãos interagem com a cidade, proporcionando uma
@@ -93,19 +88,9 @@ const AboutModern = () => {
         </div>
       </div>
 
-      <AppProgressStyle4 />
+      <BaixeAgora />
 
       <AppDownloadStyle2 />
-
-      {
-        /**
-          <ClientFeedbackStyle5 />
-
-          <TeamMemberStyle2 />
-
-          <PartnerStyle3 />
-        */
-      }
 
       <Rodape />
     </>

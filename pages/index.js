@@ -1,11 +1,9 @@
 import React from "react";
 import NavbarStyleTwo from "@/components/_App/NavbarStyleTwo";
 import MainBanner from "@/components/Common/MainBanner";
-import PartnerStyle2 from "@/components/Common/PartnerStyle2";
 import BestAppEver from "@/components/Common/BestAppEver";
 import AppDownloadStyle2 from "@/components/Common/AppDownloadStyle2";
-import ClientFeedbackStyle3 from "@/components/Feedbacks/ClientFeedbackStyle3";
-import BlogPost from "@/components/Common/BlogPost";
+import AvaliacoesDeClientes from "@/components/Feedbacks/AvaliacoesDeClientes";
 import Rodape from "@/components/_App/Rodape";
 
 const IndexPage3 = () => {
@@ -15,15 +13,11 @@ const IndexPage3 = () => {
 
       <MainBanner />
 
-      <PartnerStyle2 />
-
       <BestAppEver />
 
-      <ClientFeedbackStyle3 />
+      <AvaliacoesDeClientes />
 
       <AppDownloadStyle2 />
-
-      <BlogPost />
 
       <Rodape />
     </>

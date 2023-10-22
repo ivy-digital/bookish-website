@@ -4,7 +4,7 @@ import Link from "next/link";
 const BestAppEver = () => {
   return (
     <>
-      <div className="overview-area">
+      <div className="overview-area" style={{ marginTop: '3rem' }}>
         <div className="container-fluid">
           <div className="row m-0">
             <div className="col-xl-6 col-lg-12 col-md-12 p-0">
@@ -17,7 +17,7 @@ const BestAppEver = () => {
                   exclusivo de Matão, você expandirá seu negócio, conquistará
                   novos clientes e se tornará uma referência local. Aproveite
                   esta oportunidade única de se destacar e crescer no mercado!
-                  Cadastre-se já e faça sua marca ser conhecida por todos!"
+                  Cadastre-se já e faça sua marca ser conhecida por todos!
                 </p>
 
                 <ul className="features-list">

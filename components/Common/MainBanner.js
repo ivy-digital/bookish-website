@@ -13,7 +13,6 @@ const MainBanner = () => {
                 <h1>Destaque seu negócio com o Info Matão</h1>
                 <p>
                   Aumente sua presença digital e potencialize seus negócios!<br/>
-                  Seu negócio com a visibilidade que merece<br/>
                 </p>
                 <Link href="/cadastre-se">
                   <a className="default-btn">Comece Agora</a>
