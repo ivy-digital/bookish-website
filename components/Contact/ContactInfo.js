@@ -21,7 +21,7 @@ const ContactInfo = () => {
                     <i className="ri-customer-service-2-line"></i>
                   </div>
                   <h3>
-                    <a href="tel:+551600000-0000">(16)99714-4285</a>
+                    <a href="tel:+551699714-4285">(16)99714-4285</a>
                   </h3>
                 </div>
               </div>
