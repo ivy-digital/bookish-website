@@ -334,8 +334,12 @@ const CadastroForm = () => {
                           className="form-control"
                           value={cadastro.cpf}
                           onChange={handleChange}
-                          required
                           autoComplete="off"
+                          required
+                          minLength={14}
+                          maxLength={14}
+                          pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+                          title="Insira um CPF valido (000.000.000-00)"
                         />
                       </div>
                     </div>
@@ -355,6 +359,11 @@ const CadastroForm = () => {
                           value={cadastro.cnpj}
                           onChange={handleChange}
                           autoComplete="off"
+                          required
+                          minLength={18}
+                          maxLength={18}
+                          pattern="\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}"
+                          title="Insira um CNPJ valido (00.000.000/0001-00)"
                         />
                       </div>
                     </div>
@@ -400,7 +409,7 @@ const CadastroForm = () => {
                         <input
                           type="text"
                           name="userName"
-                          placeholder="Nome Completo "
+                          placeholder="Nome Completo"
                           className="form-control"
                           value={cadastro.userName}
                           onChange={handleChange}

@@ -23,7 +23,7 @@ const BestAppEver = () => {
                 <ul className="features-list">
                   <li>
                     <div className="icon">
-                      <i className="ri-download-cloud-2-line"></i>
+                      <i className="ri-thumb-up-line"></i>
                     </div>
                     <h3>Relevante</h3>
                     <p>
@@ -35,7 +35,7 @@ const BestAppEver = () => {
                   </li>
                   <li>
                     <div className="icon">
-                      <i className="ri-award-line"></i>
+                      <i className="ri-check-double-fill"></i>
                     </div>
                     <h3>Coerente</h3>
                     <p>
@@ -47,7 +47,7 @@ const BestAppEver = () => {
                   </li>
                   <li>
                     <div className="icon">
-                      <i className="ri-cloud-line"></i>
+                      <i className="ri-award-line"></i>
                     </div>
                     <h3>Confiável</h3>
                     <p>
