@@ -108,6 +108,12 @@ const isValidEmail = (email) => {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-z]{2,6}$/;
   return regex.test(email);
 }
+const isValidWhatsapp = (whatsapp) => {
+  if (typeof whatsapp !== "string") return false;
+  const regex = /^\(\d{2}\)\s?\d{5}-\d{4}$/;
+  return regex.test(whatsapp);
+}
+
 const PESSOA_FISICA = {
   value: 'pessoa_fisica',
   label: 'Pessoa Física - Profissionais Liberais sem CNPJ',
@@ -155,6 +161,7 @@ const CadastroForm = () => {
       legalName,
       businessName,
       userName,
+      whatsapp,
       userEmail,
       password,
     } = cadastro;
@@ -163,6 +170,7 @@ const CadastroForm = () => {
     const validCPF = true;
     const validCNPJ = isValidCNPJ(cnpj);
     const validEmail = isValidEmail(userEmail);
+    const validWhatsapp = isValidWhatsapp(whatsapp);
 
     if (isPessoaFisica && (!cpf || !validCPF)) {
       formErros.push(`CPF - Preenchimento obrigatório e valido`)
@@ -181,6 +189,9 @@ const CadastroForm = () => {
     }
     if (!validEmail) {
       formErros.push(`E-mail - Preenchimento obrigatório`)
+    }
+    if (!validWhatsapp) {
+      formErros.push(`Whatsapp - Preenchimento obrigatório`)
     }
     if (!password || password.length < 5 || password.length > 30) {
       formErros.push(`Senha - Preenchimento obrigatório (de 5 a 30 caracteres)`)
@@ -209,6 +220,7 @@ const CadastroForm = () => {
         legalName,
         businessName,
         userName,
+        whatsapp,
         userEmail,
         password,
       } = cadastro;
@@ -219,6 +231,7 @@ const CadastroForm = () => {
         cnpj: businessType === PESSOA_JURIDICA.value ? cnpj : undefined,
         legalName,
         businessName,
+        whatsapp,
         userName: isPessoaFisica ? legalName : userName,
         userEmail,
         password,
@@ -231,12 +244,10 @@ const CadastroForm = () => {
       if (response.status === 400) {
         
       }
-      console.log('cadastro >>> ', cadastro);
-      console.log('response.data >>> ', response.data);
-      console.log('response.status >>> ', response.status);
 
       setCadastro(INITIAL_STATE);
       alertContent();
+      setErrors([]);
     } catch (error) {
       console.log(error);
     }
@@ -419,6 +430,22 @@ const CadastroForm = () => {
                     </div>
                   )
                 }
+
+                { /** Whatsapp */ }
+                <div className="col-lg-12 col-md-12 col-sm-6">
+                  <div className="form-group" style={{ textAlign: 'left' }}>
+                    <input
+                      type="text"
+                      name="whatsapp"
+                      placeholder="Whatsapp "
+                      className="form-control"
+                      value={cadastro.whatsapp}
+                      onChange={handleChange}
+                      required
+                      autoComplete="off"
+                    />
+                  </div>
+                </div>
 
                 { /** E-mail do Usuario */ }
                 <div className="col-lg-12 col-md-12 col-sm-6">
