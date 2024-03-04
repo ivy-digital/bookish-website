@@ -27,28 +27,23 @@ const Rodape = () => {
 
                 <ul className="social-links">
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/people/Info-Mat%C3%A3o/100093946997660/" target="_blank">
                       <i className="ri-facebook-fill"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://instagram.com/" target="_blank">
-                      <i className="ri-twitter-fill"></i>
+                    <a href="https://www.instagram.com/infomatao/" target="_blank">
+                      <i className="ri-instagram-fill"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.whatsapp.com/" target="_blank">
-                      <i className="ri-linkedin-fill"></i>
+                    <a href="https://wa.me/+5516997144285" target="_blank">
+                      <i className="ri-whatsapp-fill"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.email.com/" target="_blank">
-                      <i className="ri-messenger-fill"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtub.com/" target="_blank">
-                      <i className="ri-messenger-fill"></i>
+                    <a href="mailto:contato@infomatao.com.br" target="_blank">
+                      <i className="ri-mail-fill"></i>
                     </a>
                   </li>
                 </ul>
