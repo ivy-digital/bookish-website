@@ -140,35 +140,6 @@ const ClientFeedbackStyle3 = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="single-feedback-box">
-                <div className="client-info">
-                  <div className="d-flex align-items-center">
-                    <img src="/images/elitelogo.png" alt="user" />
-                    <div className="title">
-                      <h3>Confecções Elite</h3>
-                      <span>Fabricação de Roupas Esportivas</span>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "A interação com outros empresários na plataforma proporcionou
-                  uma rica troca de ideias e oportunidades de networking. Fui
-                  capaz de estabelecer parcerias estratégicas que impulsionaram
-                  o crescimento da minha empresa de maneira surpreendente. Vale
-                  a pena se cadastrar!"
-                </p>
-                <div className="rating d-flex align-items-center justify-content-between">
-                  <h5>Eder Biagi</h5>
-                  <div>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                  </div>
-                </div>
-              </div>
             </OwlCarousel>
           ) : (
             ""

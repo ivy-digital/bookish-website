@@ -20,7 +20,7 @@ const AppProgressStyle4 = () => {
                 <p>
                   Estamos entusiasmados em apresentar o nosso mais recente
                   empreendimento tecnológico: o aplicativo que está prestes a
-                  transformar a forma como você empreendedor vai se conecta com
+                  transformar a forma como você empreendedor vai se conectar com
                   Matão! Este aplicativo inovador é uma verdadeira central de
                   informações, projetada para simplificar e melhorar a sua vida
                   para levar sua empresa de forma ágil cada vez mais perto dos
@@ -37,7 +37,7 @@ const AppProgressStyle4 = () => {
                 </p>
                 <p>Você não vai ficar de fora né?!</p>
 
-                <Link href="/sign-in">
+                <Link href="/cadastre-se">
                   <a className="default-btn">Cadastre-se Agora</a>
                 </Link>
               </div>

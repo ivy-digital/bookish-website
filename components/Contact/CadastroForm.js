@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 import baseUrl from "@/utils/baseUrl";
+import Link from "next/link";
 
 const alertContent = () => {
   MySwal.fire({
@@ -133,19 +134,27 @@ const INITIAL_STATE = {
   cnpj: "",
   legalName: "",
   businessName: "",
+  whatsapp: "",
   userName: "",
   userEmail: "",
   password: "",
+  acceptTerms: false,
 };
 
 const CadastroForm = () => {
   const [cadastro, setCadastro] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState([]);
+  const [accept, setAccept] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCadastro((prevState) => ({ ...prevState, [name]: value }));
   };
+
+  const handleAcceptTerms = (e) => {
+    const value = e.target.checked;
+    setAccept(value);
+  }
 
   const legalNamePlaceholder = cadastro.businessType == PESSOA_FISICA.value ? 'Nome Completo' : 'Razão Social';
   const businessNamePlaceholder = cadastro.businessType == PESSOA_FISICA.value ? 'Nome da Empresa' : 'Nome Fantasia';
@@ -202,6 +211,19 @@ const CadastroForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!accept) {
+      return MySwal.fire({
+        title: "Aceite a Política de Privacidade e os Termos e Condições",
+        text: "Aceite a Política de Privacidade e os Termos e Condições antes de enviar os dados.",
+        icon: "error",
+        timer: 8000,
+        showCloseButton: true,
+        timerProgressBar: true,
+        showConfirmButton: false,
+      });
+    }
+
     const formErros = validateFields();
     if (formErros.length) {
       e.preventDefault();
@@ -236,7 +258,22 @@ const CadastroForm = () => {
         userEmail,
         password,
       };
-      const response = await axios.post(url, payload);
+      const response = await axios.post(url, payload)
+                                  .catch((error) => {
+                                    const status = error.response.status;
+
+                                    if (status === 409) {
+                                      MySwal.fire({
+                                        title: "Estabelecimento já existente!",
+                                        text: "Este CPF ou CNPJ já está cadastrado em outro estabelecimento!",
+                                        icon: "error",
+                                        timer: 15000,
+                                        showCloseButton: true,
+                                        timerProgressBar: true,
+                                        showConfirmButton: false,
+                                      });
+                                    }
+                                  });
 
       if (response.status === 200) {
         // success
@@ -249,7 +286,7 @@ const CadastroForm = () => {
       alertContent();
       setErrors([]);
     } catch (error) {
-      console.log(error);
+      console.log('ERORRRRRRRR', error);
     }
   };
 
@@ -479,6 +516,23 @@ const CadastroForm = () => {
                   </div>
                 </div>
 
+                { /** Termos e Condicoes */ }
+                <div className="col-lg-12 col-md-12 col-sm-6">
+                  <div className="form-group" style={{ textAlign: 'left' }}>
+                    <label>
+                      <input
+                        type={"checkbox"}
+                        name="acceptTerms"
+                        defaultChecked={accept}
+                        onChange={handleAcceptTerms}
+                        required
+                        autoComplete="off"
+                        style={{ marginRight: '0.5rem' }}
+                      />
+                      Eu concordo com os a <Link href="/politica-privacidade"><a>Política de Privacidade</a></Link> e os <Link href="/termos-condicoes"><a>Termos e Condições</a></Link>
+                    </label>
+                  </div>
+                </div>
 
                 <div className="col-lg-12 col-md-12 col-sm-12">
                   <button type="submit" className="default-btn">

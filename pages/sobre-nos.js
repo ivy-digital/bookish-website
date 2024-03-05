@@ -65,7 +65,7 @@ const AboutModern = () => {
                 </div>
 
                 <div className="btn-box">
-                  <Link href="https://play.google.com/store/apps">
+                  <Link href="/cadastre-se">
                     <a className="default-btn">Cadastre-se Agora</a>
                   </Link>
                   {/*
