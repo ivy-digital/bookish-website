@@ -20,7 +20,7 @@ const AppDownloadStyle2 = () => {
 
                   <div className="btn-box">
                     <a
-                      href="https://play.google.com/store/apps"
+                      href="https://play.google.com/store/apps/details?id=br.com.infomatao"
                       className="playstore-btn"
                       target="_blank"
                     >
@@ -29,7 +29,7 @@ const AppDownloadStyle2 = () => {
                       <span>Google Play</span>
                     </a>
                     <a
-                      href="https://www.apple.com/app-store/"
+                      href="https://apps.apple.com/br/app/info-mat%C3%A3o/id6478567385"
                       className="applestore-btn"
                       target="_blank"
                     >
